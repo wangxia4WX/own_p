@@ -4,7 +4,10 @@
 import sys
 variable = {}
 def out(fun, sep=' ', end='\n', file=sys.stdout, flush=False):
-    if fun[0:3] == "out" and fun [3:4] == " ":
+    if fun[0:3] == "out" and fun [3:5] == " ":
+        fun = fun[6:]
+        print(fun)
+    elif fun[0:3] == "out" and fun [3:4] == " ":
         fun = fun[4:]
         d = variable.get(fun,None)    
         if d is not None:
@@ -18,7 +21,9 @@ def s(fun):
         fun = int(fun)
         print(abs(fun))
 def inp(fun):
-    if fun[0:3] == "inp" and fun[4:5] == " ":
+    if fun[0:3] == "inp" and fun[3:4] == "":
+        input()
+    elif fun[0:3] == "inp" and fun[3:4] == " ":
         fun = fun[5:]
         if fun == "" or fun == " ":
             input()
