@@ -4,8 +4,8 @@
 import sys
 variable = {}
 def out(fun, sep=' ', end='\n', file=sys.stdout, flush=False):
-    if fun[0:3] == "out" and fun [3:5] == " ":
-        fun = fun[6:]
+    if fun[0:3] == "out" and fun [3:5] == "  ":
+        fun = fun[5:]
         print(fun)
     elif fun[0:3] == "out" and fun [3:4] == " ":
         fun = fun[4:]
@@ -30,8 +30,6 @@ def inp(fun):
         else:
             input(fun)
 def var(fun):
-    global i
-    i = 0
     if fun[0:3] == "var" and fun[3:4] == " ":
         fun = fun[4:]
         a = fun.index(" ")
