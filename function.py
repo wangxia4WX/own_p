@@ -36,12 +36,20 @@ def var(fun):
         k = fun[:a]
         j = fun[a+1:]
         try:
-            b = float(j)
-            c = int(j)
-            if b == c:
-                j = c
+            if j[0:3] == "inp" and j[3:] == "":
+                a = input()
+                j = a
+            elif j[0:3] == "inp" and j[3:4] == " ":
+                fun = fun[6:]
+                n = input(fun)
+                j = n
             else:
-                j = b
+                b = float(j)
+                c = int(j)
+                if b == c:
+                    j = c
+                else:
+                    j = b
         except:
             j = j
         variable[k] = j
