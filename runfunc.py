@@ -9,5 +9,3 @@ def main():
         s(func)
         inp(func)
         var(func)
-if __name__ == "__main__":
-    main()
